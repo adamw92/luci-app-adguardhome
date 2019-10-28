@@ -7,3 +7,4 @@
 
 AdGuardHome运行文件、配置文件AdGuardHome.yaml、data等全部位于/etc/AdGuardHome目录下，固件升级时直接备份该文件夹即可。如AdGuardHome自身有版本升级，通过AdGuardHome网页即可一键完成。
 
+建议修改AdGuardHome.yaml中的ratelimit数值，可以提高性能，可修改为0（不限制）或更大的数字，可参考官方wiki。
