@@ -21,7 +21,7 @@ enabled.placeholder=3000
 enabled.default=3000
 enabled.datatype="port"
 enabled.rmempty=false
-enabled.description = translate("注:只为网页快捷方式提供管理端口参数 <br /><br /> <input type=\"button\" style=\"width:180px;border-color:Teal; text-align:center;font-weight:bold;color:Green;\" value=\"AdGuardHome Web\" onclick=\"window.open('http://'+window.location.hostname+':"..port.."/')\"/>")
+enabled.description = translate("注:只为下面的网页快捷方式提供管理端口参数↓ <br /><br /> <input type=\"button\" style=\"width:180px;border-color:Teal; text-align:center;font-weight:bold;color:Green;\" value=\"AdGuardHome Web\" onclick=\"window.open('http://'+window.location.hostname+':"..port.."/')\"/>")
 
 local apply = luci.http.formvalue("cbi.apply")
  if apply then

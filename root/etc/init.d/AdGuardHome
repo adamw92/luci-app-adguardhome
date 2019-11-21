@@ -5,7 +5,7 @@ USE_PROCD=1
 START=95
 STOP=01
 
-BINLOADER_BIN="/etc/AdGuardHom/AdGuardHome"
+BINLOADER_BIN="/etc/AdGuardHome/AdGuardHome"
 CONFIGURATION=AdGuardHome
 
 service_triggers()
