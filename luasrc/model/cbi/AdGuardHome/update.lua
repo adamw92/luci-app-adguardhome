@@ -37,10 +37,20 @@ o.inputstyle = "reload"
 o.write = function()
   m.uci:set("AdGuardHome", "config", "enable", 1)
   m.uci:commit("AdGuardHome")
-  SYS.call("sh /usr/share/AdGuardHome/core_download.sh >/dev/null 2>&1 &&  /etc/init.d/AdGuardHome restart >/dev/null 2>&1 &")
-  HTTP.redirect(DISP.build_url("admin", "services", "AdGuardHome"))
+  SYS.call("sh /usr/share/AdGuardHome/core_download.sh >>/tmp/AdGuardHome.log 2>&1 &")
+  HTTP.redirect(DISP.build_url("admin", "services", "AdGuardHome", "update"))
+end
+
+local clog = "/tmp/AdGuardHome.log"
+log = s:option(TextValue, "clog")
+log.readonly=true
+log.description = translate("")
+log.rows = 15
+log.wrap = "off"
+log.cfgvalue = function(self, section)
+	return NXFS.readfile(clog) or ""
+end
+log.write = function(self, section, value)
 end
 
 return m
-
-
