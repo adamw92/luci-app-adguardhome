@@ -36,6 +36,7 @@ define Package/luci-app-adguardhome/install
 	$(INSTALL_DIR) $(1)/
 	cp -pR ./root/* $(1)/
 	chmod 0755 $(1)/etc/init.d/AdGuardHome
+	chmod 0755 $(1)/user/share/AdGuardHome/core_download.sh
 endef
 
 define Package/luci-app-adguardhome/postinst

@@ -4,11 +4,8 @@ if not nixio.fs.access("/etc/config/AdGuardHome")then
 return
 end
 	entry({"admin", "services", "AdGuardHome"},alias("admin", "services", "AdGuardHome", "overview"), _("AdGuard Home"), 30).dependent = false
-	entry({"admin", "services", "AdGuardHome", "overview"},cbi("AdGuardHome/overview"),_("Overview"), 10).leaf = true
-	entry({"admin", "services", "AdGuardHome", "update"},cbi("AdGuardHome/update"),_("Update"), 20).leaf = true
-
-
-	entry({"admin", "services", "AdGuardHome"},cbi("AdGuardHome"),_("AdGuard Home"),30).dependent=true
+	entry({"admin", "services", "AdGuardHome", "overview"},cbi("AdGuardHome/AdGuardHome"),_("AdGuard Home"), 10).leaf = true
+	entry({"admin", "services", "AdGuardHome", "update"},cbi("AdGuardHome/update"),_("AdGuard Home主程序"), 20).leaf = true
 	entry({"admin", "services", "AdGuardHome","status"},call("act_status")).leaf=true
 end 
 
