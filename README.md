@@ -1,5 +1,5 @@
 # luci-app-adguardhome
-[Download Luci ipk](https://github.com/adamw92/luci-app-adguardhome/releases/download/1.3.1/luci-app-adguardhome_1.3-1_all.ipk)
+[Download Luci ipk](https://github.com/adamw92/luci-app-adguardhome/releases/download/1.4.1/luci-app-adguardhome_1.4-1.ipk)
 
 简单的AdGuardHome的OpenWrt启动和停止控制及主程序下载，AdGuardHome默认安装位置为/etc/AdGuardHome/，内置快捷方式可快速打开AdGuardHome Web页面。
 
