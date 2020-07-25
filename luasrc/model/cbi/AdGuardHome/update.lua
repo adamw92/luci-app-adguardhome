@@ -36,7 +36,7 @@ o:value("0", translate("Not Set"))
 o = s:option(Button,"down_core")
 o.title = translate("Download")
 o.inputtitle = translate("Download")
-o.description = translate("Download")
+o.description = translate("请选择CPU类型后点击下载，默认下载stable 版本，下载完成后请勾选启动广告屏蔽，保存并应用后，点击AdGuardHome Web按钮进行配置。后续更新请使用AdGuardHome Web控制页面进行更新。")
 o.inputstyle = "reload"
 o.write = function()
   m.uci:set("AdGuardHome", "config", "enable", 1)
