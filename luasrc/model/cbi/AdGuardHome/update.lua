@@ -20,12 +20,16 @@ s.anonymous = true
 local cpu_model=SYS.exec("opkg status libc 2>/dev/null |grep 'Architecture' |awk -F ': ' '{print $2}' 2>/dev/null")
 o = s:option(ListValue, "download_core", translate("选择内核"))
 o.description = translate("CPU Model")..': '..font_green..bold_on..cpu_model..bold_off..font_off..' '
-o:value("linux_386")
-o:value("linux_amd64", translate("linux-amd64(x86-64)"))
-o:value("linux_arm")
-o:value("linux_arm64")
-o:value("linux_mips")
-o:value("linux_mipsle")
+o:value("linux_386", translate("Linux 32-bit"))
+o:value("linux_amd64", translate("Linux 64-bit (x86-64)"))
+o:value("linux_armv5", translate("32-bit ARMv5"))
+o:value("linux_armv6", translate("32-bit ARMv6"))
+o:value("linux_armv7", translate("32-bit ARMv7"))
+o:value("linux_arm64", translate("64-bit ARMv8"))
+o:value("linux_mips_softfloat", translate("32-bit MIPS"))
+o:value("linux_mipsle_softfloat", translate("32-bit MIPSLE"))
+o:value("linux_mips64_softfloat", translate("64-bit MIPS"))
+o:value("linux_mips64le_softfloat", translate("64-bit MIPSLE"))
 o:value("0", translate("Not Set"))
 
 

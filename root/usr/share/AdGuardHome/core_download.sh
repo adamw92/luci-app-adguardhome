@@ -10,11 +10,9 @@ LOG_FILE="/tmp/AdGuardHome.log"
 CPU_MODEL=$(uci get AdGuardHome.AdGuardHome.download_core)
    
 if [ "$CPU_MODEL" != 0 ]; then
-	echo "开始检测AdGuardHome 版本号..." >$LOG_FILE
-	AdGuardHome_version=`wget -qO- "https://github.com/AdguardTeam/AdGuardHome/tags"| grep "/AdguardTeam/AdGuardHome/releases/tag/"| head -n 1| awk -F "/tag/v" '{print $2}'| sed 's/\">//'`
-	echo "AdGuardHome最新版本为"$AdGuardHome_version"" 
+	echo "选择的CPU类型为"$CPU_MODEL"" >$LOG_FILE
 	echo "开始下载 AdGuardHome 内核..." 
-	wget-ssl --no-check-certificate https://github.com/AdguardTeam/AdGuardHome/releases/download/v"$AdGuardHome_version"/AdGuardHome_"$CPU_MODEL".tar.gz -O 2>&1 >1 /tmp/AdGuardHome.tar.gz
+	wget-ssl --no-check-certificate https://static.adguard.com/adguardhome/release/AdGuardHome_"$CPU_MODEL".tar.gz -O 2>&1 >1 /tmp/AdGuardHome.tar.gz
 	if [ "$?" -eq "0" ]; then
 		tar zxvf /tmp/AdGuardHome.tar.gz -C /tmp >/dev/null 2>&1\
 		&& rm -rf /tmp/AdGuardHome.tar.gz >/dev/null 2>&1\
